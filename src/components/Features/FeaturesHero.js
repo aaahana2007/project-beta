@@ -28,11 +28,12 @@ function FeaturesHero() {
             </p>
             <div class="flex justify-center">
               <button class="inline-flex text-white bg-first border-0 py-2 px-6 focus:outline-none hover:bg-fourth rounded text-lg">
-                Stats
+                <a href="#stats">Stats</a>
               </button>
             </div>
           </div>
         </div>
+        <div id="stats"></div>
       </section>
     </div>
   );
