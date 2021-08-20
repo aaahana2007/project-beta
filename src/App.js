@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Home from "./components/pages/Home";
+import Pricing from "./components/pages/Pricing";
+import About from "./components/pages/About";
+import "./styling/main.css";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import Demonstration from "./components/pages/Demonstration";
+import Trial from "./components/pages/Trial";
+import WithOrWithOutNav from "./components/WithOrWithOutNav";
+import Features from "./components/pages/Features";
+import Construction from "./components/Construction";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ScrollToTop />
+      {/* <WithOrWithOutNav /> */}
+      <Nav />
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/pricing" exact component={Pricing} />
+        <Route path="/about" exact component={About} />
+        <Route path="/gallery" exact component={Demonstration} />
+        <Route path="/features" exact component={Features} />
+        <Route path="/trial" exact component={Construction} />
+        {/* <Route path="/" component={} */}
+      </Switch>
+      <Footer />
     </div>
   );
 }
-
 export default App;
